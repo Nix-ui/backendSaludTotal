@@ -27,8 +27,7 @@ import config from './config/configuration';
       username: config().database.username,
       password: config().database.password,
       database: config().database.database,
-      entities: [ __dirname + '/**/*.entity{.ts,.js}' ],
-      synchronize: true
+      entities: [ __dirname + '/**/*.entity{.ts,.js}' ]
     })
   }),StoredProcedureModule, UsersModule, HealthInstitucionModule, AuthModule],
   controllers: [AppController],
