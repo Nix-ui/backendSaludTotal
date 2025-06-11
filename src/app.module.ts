@@ -15,7 +15,7 @@ import config from './config/configuration';
 @Module({
   imports: [DatabaseModule,ConfigModule.forRoot({
     isGlobal: true,
-    envFilePath: process.env.NODE_ENV === 'production' ? null : 'development.env',
+    envFilePath: process.env.NODE_ENV !== 'production' ? 'development.env' : undefined,
     ignoreEnvFile: process.env.NODE_ENV === 'production',
     load: [config]
   }),
