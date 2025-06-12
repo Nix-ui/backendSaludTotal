@@ -27,7 +27,7 @@ export class UsersService {
         console.log('Creating user with address:', createUserDto);
         const user = await this.databaseService.executeStoredProcedure<Users>('CreateUserWithAddress', [
             createUserDto.userCi,
-            createUserDto.userEmail,
+            createUserDto.userEmail+'@gmail.com',
             createUserDto.userName,
             bcrypt.hashSync(createUserDto.userPassword,bcrypt.genSaltSync(10)),
             createUserDto.userPhone,
